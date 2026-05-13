@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchong Dee University - Transforming Emotional Damage Into Academic Excellence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2a44;
+            --navy-light: #2c3e50;
+            --gold: #d4a017;
+            --gold-light: #f1c40f;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --gray: #6c757d;
+            --dark-gray: #343a40;
+            --rainy-blue: #4a90e2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 42, 68, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 42, 68, 0.85), rgba(74, 144, 226, 0.6)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a2a44" width="1200" height="800"/><path fill="%234a90e2" opacity="0.3" d="M0 400Q300 200 600 400T1200 400V800H0z"/><circle fill="%23d4a017" opacity="0.6" cx="200" cy="300" r="80"/><circle fill="%23f1c40f" opacity="0.4" cx="1000" cy="250" r="60"/><rect fill="%236c757d" opacity="0.2" x="300" y="500" width="200" height="100" rx="20"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="%23ffffff" opacity="0.1" cx="20" cy="20" r="3"/><circle fill="%23d4a017" opacity="0.05" cx="80" cy="30" r="2"/><circle fill="%23ffffff" opacity="0.08" cx="40" cy="70" r="4"/></svg>') repeat;
+            animation: rain 20s linear infinite;
+        }
+
+        @keyframes rain {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100px); }
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            animation: fadeInUp 1s ease 0.2s both;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            box-shadow: 0 8px 32px rgba(212, 160, 23, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(212, 160, 23, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.8);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--light-gray), #e9ecef);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            background: var(--white);
+            padding: 2.5rem 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--gold);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.15);
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, var(--navy), var(--rainy-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .colleges-grid, .news-grid, .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--rainy-blue));
+        }
+
+        .card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+            border-color: rgba(212,160,23,0.3);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: var(--navy);
+        }
+
+        .card p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* News Cards */
+        .news-card {
+            padding: 2.5rem;
+        }
+
+        .news-card .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .news-date {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--navy), var(--navy-light));
+            color: var(--white);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '"Emotional damage builds character"';
+            position: absolute;
+            top: -50px;
+            right: 10%;
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.8;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-carousel {
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+
+        .testimonial {
+            min-width: 100%;
+            padding: 4rem 3rem;
+            text-align: center;
+            opacity: 0.6;
+            transition: all 0.8s ease;
+            position: relative;
+        }
+
+        .testimonial.active {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .testimonial-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--rainy-blue));
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--navy);
+            box-shadow: 0 15px 40px rgba(212,160,23,0.4);
+        }
+
+        .testimonial p {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Programs */
+        .programs-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .filter-btn {
+            padding: 1rem 2rem;
+            border: 2px solid var(--light-gray);
+            background: var(--white);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--navy);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 5rem 2rem 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--rainy-blue), var(--gold));
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-section a {
+            color: var(--gray);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+            transform: translateX(10px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            transform: translateY(-8px) rotate(360deg);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--navy);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem 0;
+            }
+            .nav-menu.active { left: 0; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .colleges-grid, .news-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 15px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(212,160,23,0.1);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">EDU</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#colleges">Colleges</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transforming Emotional Damage<br>Into Academic Excellence</h1>
+            <p>For students pursuing higher education and lower emotional stability. Where your attachment issues meet your academic ambitions.</p>
+            <div class="hero-buttons">
+                <a href="#programs" class="btn btn-primary">
+                    <i class="fas fa-heart-broken"></i> Apply Now
+                </a>
+                <a href="#programs" class="btn btn-secondary">
+                    <i class="fas fa-brain"></i> Explore Programs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats reveal">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3 data-target="30000">0</h3>
+                <p>Emotionally Damaged Students</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-target="120">0</h3>
+                <p>Delusional Degree Programs</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-target="500">0</h3>
+                <p>Licensed Overthinkers</p>
+            </div>
+            <div class="stat-item">
+                <h3 data-target="80">0</h3>
+                <p>International Situationship Partners</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Colleges -->
+    <section id="colleges" class="section reveal">
+        <h2 class="section-title">Featured Colleges</h2>
+        <div class="colleges-grid">
+            <div class="card">
+                <i class="fas fa-heart-broken card-icon"></i>
+                <h3>College of Emotional Engineering</h3>
+                <p>Master the art of building walls around your heart while simultaneously begging for them to be torn down.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-brain card-icon"></i>
+                <h3>College of Delulu Sciences</h3>
+                <p>Turning "maybe" into "definitely" since 2020. Professional training in romantic delusion.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-clock card-icon"></i>
+                <h3>College of Situationship Studies</h3>
+                <p>3am texts, 3 day response times, and 300% emotional investment. We get it.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-magnifying-glass card-icon"></i>
+                <h3>College of Online Investigation</h3>
+                <p>FBI-level training for checking their last seen, story views, and Spotify wrapped.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cloud-rain card-icon"></i>
+                <h3>College of Hopeless Romanticism</h3>
+                <p>Romanticizing rainy days, coffee shop glances, and people who don't text back.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-exclamation-triangle card-icon"></i>
+                <h3>College of Toxic Relationship Sciences</h3>
+                <p>Red flags? We see them as participation ribbons. "I can fix them" certified.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Events -->
+    <section id="news" class="section reveal" style="background: linear-gradient(135deg, var(--light-gray), #f0f4f8);">
+        <h2 class="section-title">Latest News & Emotional Emergencies</h2>
+        <div class="news-grid">
+            <div class="news-card card">
+                <i class="fas fa-music card-icon"></i>
+                <div class="news-date">2 hours ago</div>
+                <h3>Student Cries After Hearing One Song</h3>
+                <p>Local student heard "Happier Than Ever" on Spotify and had full emotional breakdown in dining hall.</p>
+            </div>
+            <div class="news-card card">
+                <i class="fas fa-flask card-icon"></i>
+                <div class="news-date">Today</div>
+                <h3>New Overthinking Laboratory Opens</h3>
+                <p>State-of-the-art facility equipped with 50 mirrors for maximum self-sabotage potential.</p>
+            </div>
+            <div class="news-card card">
+                <i class="fas fa-trophy card-icon"></i>
+                <div class="news-date">Yesterday</div>
+                <h3>Top 10 Delulu Students Receive Scholarships</h3>
+                <p>Winners selected based on most convincing "we're just friends" defense.</p>
+            </div>
+            <div class="news-card card">
+                <i class="fas fa-calendar-day card-icon"></i>
+                <div class="news-date">Next Week</div>
+                <h3>Annual Yearning Week Begins</h3>
+                <p>Sad playlist competition, rainy window staring contest, and unsent message reading.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials section reveal">
+        <h2 class="section-title" style="color: var(--white);">What Our Brokenhearted Students Say</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial active">
+                <div class="testimonial-avatar">😭</div>
+                <p>"I came here happy. Now I have a PhD in attachment issues and a minor in stalking their Instagram."</p>
+                <div class="testimonial-author">Alex, Delulu Sciences '24</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-avatar">💔</div>
+                <p>"The BS in Moving On program changed my life... emotionally and negatively. 10/10 would relapse again."</p>
+                <div class="testimonial-author">Maria, Emotional Engineering '23</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-avatar">🥺</div>
+                <p>"The campus crying area is world class. 5 stars. Would recommend for all heartbreak emergencies."</p>
+                <div class="testimonial-author">Jordan, Situationship Studies '24</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-avatar">🤡</div>
+                <p>"Finally found my people. Everyone here gets why I check their online status 47 times a day."</p>
+                <div class="testimonial-author">Sam, Online Investigation '23</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section reveal">
+        <h2 class="section-title">Academic Programs for the Emotionally Compromised</h2>
+        <div class="programs-filters">
+            <button class="filter-btn active" data-filter="all">All Programs</button>
+            <button class="filter-btn" data-filter="emotional">Emotional Engineering</button>
+            <button class="filter-btn" data-filter="delulu">Delulu Sciences</button>
+            <button class="filter-btn" data-filter="situationship">Situationship Studies</button>
+            <button class="filter-btn" data-filter="investigation">Online Investigation</button>
+            <button class="filter-btn" data-filter="romanticism">Hopeless Romanticism</button>
+            <button class="filter-btn" data-filter="toxic">Toxic Sciences</button>
+            <button class="filter-btn" data-filter="graduate">Graduate</button>
+        </div>
+        <div class="programs-grid" id="programs-grid"></div>
+    </section>
+
+    <!-- Admissions CTA -->
+    <section class="section reveal" style="background: linear-gradient(135deg, var(--rainy-blue), var(--navy)); color: var(--white); text-align: center;">
+        <h2 class="section-title" style="color: var(--white);">Ready to Join the Emotional Rollercoaster?</h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 3rem; opacity: 0.95;">
+            Admission requirements: 2 valid IDs, emotional trauma, at least one failed talking stage, 
+            ability to overthink simple messages, must have cried to music at least once.
+        </p>
+        <a href="#contact" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.3rem 3rem;">
+            <i class="fas fa-heart-broken"></i> Start Application
+        </a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal">
+        <h2 class="section-title">Contact Us (We Check Messages Sometimes)</h2>
+        <div class="contact-container">
+            <div>
+                <h3 style="color: var(--navy); margin-bottom: 2rem; font-family: 'Playfair Display', serif;">
+                    Emotional Support Hotline
+                </h3>
+                <div style="margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                        <i class="fas fa-phone" style="color: var(--gold); margin-right: 1rem;"></i>
+                        +1 (555) CRY-4-EVER
+                    </p>
+                    <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                        <i class="fas fa-envelope" style="color: var(--gold); margin-right: 1rem;"></i>
+                        <a href="mailto:support@enchongdeeuniversity.edu" style="color: var(--gray);">support@enchongdeeuniversity.edu</a>
+                    </p>
+                    <p style="font-size: 1.1rem;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--gold); margin-right: 1rem;"></i>
+                        Hall of Unsent Messages, Yearning Ave, Delulu City
+                    </p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name (or current situationship)" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email (we might reply)" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject (e.g. 'They're viewing my stories again')" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="6" placeholder="Describe your emotional emergency..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Distress Signal</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Enchong Dee University</h3>
+                <p>Accredited by the International Association of Delulu Institutions. Where emotional damage meets academic excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Student Portal (for stalking grades)</a>
+                <a href="#">Emotional Support Library</a>
+                <a href="#">Relapse Prevention Center</a>
+                <a href="#">Unsent Messages Archive</a>
+            </div>
+            <div class="footer-section">
+                <h3>Programs</h3>
+                <a href="#">Undergraduate Delulu</a>
+                <a href="#">Graduate Heartbreak</a>
+                <a href="#">PhD in Overthinking</a>
+                <a href="#">Certificate in Situationships</a>
+            </div>
+            <div class="footer-section">
+                <h3>Campus Life</h3>
+                <a href="#">Crying Areas</a>
+                <a href="#">The Relapse Café</a>
+                <a href="#">Yearning Week</a>
+                <a href="#">Delulu Fair</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Enchong Dee University. All emotional rights reserved. | "Accredited by the League of Professional Clowns" | Designed for maximum relatability.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').style.background = 
+                window.scrollY > 100 ? 'rgba(26, 42, 68, 0.98)' : 'rgba(26, 42, 68, 0.95)';
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href'))?.scrollIntoView({
+                    behavior: 'smooth', block: 'start'
+                });
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Animated counters
+        function animateCounters() {
+            document.querySelectorAll('[data-target]').forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 120;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.innerText = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = Math.floor(current) + '+';
+                    }
+                }, 25);
+            });
+        }
+
+        // Scroll reveal
+        function revealOnScroll() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        // Testimonial carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000);
+
+        // Programs data
+        const programs = {
+            emotional: [
+                { name: 'BS in Moving On', desc: 'Learn advanced techniques for pretending you\'re okay while reposting sad TikToks at 2AM.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Relapse Engineering', desc: 'Because second, third, and fourth chances are our specialty.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Attachment Issues', desc: 'From anxious to avoidant: the full emotional damage spectrum.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Crying While Listening to Music', desc: 'Taylor Swift scholarship available.', duration: '4 years', degree: 'BS' }
+            ],
+            delulu: [
+                { name: 'BA in Delusion', desc: 'Professional training in turning one reply into a full romantic storyline.', duration: '4 years', degree: 'BA' },
+                { name: 'BS in False Hope Management', desc: '\'He viewed my story\' = relationship confirmed.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Overthinking', desc: '3000 words essay on why they took 3 hours to reply.', duration: '4 years', degree: 'BS' }
+            ],
+            situationship: [
+                { name: 'BS in Bare Minimum Appreciation', desc: 'Master the art of celebrating "k" responses.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in One-Sided Communication', desc: 'Carrying conversations alone since 2021.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Ghosting Survival', desc: 'From seen zone to deleted chat: we prepare you for all scenarios.', duration: '4 years', degree: 'BS' }
+            ],
+            investigation: [
+                { name: 'BS in Advanced Stalking Technology', desc: 'FBI-level training for emotionally unstable detectives.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Screenshot Preservation', desc: 'Digital archiving of every conversation since 2019.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Spotify Playlist Investigation', desc: 'Is that sad song about me?', duration: '4 years', degree: 'BS' }
+            ],
+            romanticism: [
+                { name: 'BA in Yearning', desc: 'For students who think every sad song is about them.', duration: '4 years', degree: 'BA' },
+                { name: 'BA in Rainy Window Staring', desc: 'Poetic suffering with a side of existential dread.', duration: '4 years', degree: 'BA' },
+                { name: 'BA in Missing Someone Who Doesn\'t Care', desc: 'The graduate program is called "marriage".', duration: '4 years', degree: 'BA' }
+            ],
+            toxic: [
+                { name: 'BS in Red Flag Ignorance', desc: 'Turning warning signs into green lights since forever.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in "I Can Fix Them"', desc: 'Engineering degree for hopeless romantics.', duration: '4 years', degree: 'BS' },
+                { name: 'BS in Returning to Toxic People', desc: '\'This time will be different\' certification.', duration: '4 years', degree: 'BS' }
+            ],
+            graduate: [
+                { name: 'Master in Situationship Management', desc: 'Advanced studies in maintaining undefined relationships.', duration: '2 years', degree: 'MS' },
+                { name: 'MBA (Master of Brokenhearted Administration)', desc: 'Leading from the friendzone with confidence.', duration: '2 years', degree: 'MBA' },
+                { name: 'PhD in Overthinking', desc: '17 years of research culminating in "they probably hate me".', duration: '5 years', degree: 'PhD' }
+            ]
+        };
+
+        // Program filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                const programsList = filter === 'all' ? 
+                    Object.values(programs).flat() : programs[filter];
+                renderPrograms(programsList);
+            });
+        });
+
+        function renderPrograms(programList) {
+            const grid = document.getElementById('programs-grid');
+            grid.innerHTML = '';
+            programList.forEach(program => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <i class="fas fa-heart-broken card-icon"></i>
+                    <h3>${program.name}</h3>
+                    <p>"${program.desc}"</p>
+                    <div style="color: var(--gold); font-weight: 600; font-size: 1.1rem; margin: 1.5rem 0;">
+                        ${program.duration} | ${program.degree}
+                    </div>
+                    <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Initialize programs
+        renderPrograms(Object.values(programs).flat());
+
+        // Event listeners
+        window.addEventListener('scroll', revealOnScroll);
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.classList.contains('stats')) {
+                    animateCounters();
+                }
+            });
+        });
+        observer.observe(document.querySelector('.stats'));
+
+        // Contact form
+        document.querySelector('.contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('✅ Distress signal sent! (We might reply in 3-5 business days or never. Typical.)');
+            e.target.reset();
+        });
+
+        // Initial animations
+        revealOnScroll();
+    </script>
+</body>
+</html>
